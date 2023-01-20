@@ -7,21 +7,18 @@ int main() {
     int number;
     printf("number: ");
     scanf("%d", &number);
-    fibonacci(number);
+    int x = fibonacci(number);
+    printf("%d",x);
     return 0;
 }
 
 int fibonacci(int n){
-    int arr[MAX_LIMIT] = {0,1};
-    if(n==0){
-        printf("%d", arr[0]);
-    }else if(n==1){
-        printf("%d", arr[1]);
-    }else{
-        for(int i=2;i<n+1;i++){
-           arr[i]=arr[i-1]+arr[i-2]; 
-        }
-        printf("%d",arr[n]);
-    }
-    
+    if(n==0)
+        return 0;
+    if(n==1)
+        return 1;
+    int y = fibonacci(n-1);
+    int z = fibonacci(n-2);
+    int p = z+y;
+    return p;
 }
