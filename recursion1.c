@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int draw(int n);
+int drawLine(int m);
 
 int main() {
     int height;
@@ -15,9 +16,13 @@ int draw(int n){
         return 1;
         
     draw(n-1);
-    
-    for(int i=0; i<n;i++){
-      printf("#");
-    }
+    drawLine(n);
     printf("\n");
+}
+
+int drawLine(int m){
+    if(m==0)
+        return;
+    drawLine(m-1);
+    printf("#");
 }
