@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 int collatz(int n);
-int x=1;
 
 int main() {
     
@@ -18,13 +17,8 @@ int collatz(int n){
     
     if (n==1)
         return 0;
-    else if (n%2 == 0 ){
-        collatz((int)n/2);
-        return x++;
-    }
-    else if(n%2 == 1){
-        collatz((3*n) +1);
-        return x++;
-    }else
-        return;
+    else if (n%2 == 0 )
+        return 1 + collatz((int)n/2);
+    else
+        return 1 +collatz((3*n) +1);
 }
