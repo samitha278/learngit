@@ -21,6 +21,5 @@ int fibonacci(int n){
         return 0;
     if(n==1)
         return 1;
-    int p = fibonacci(n-1)+fibonacci(n-2);
-    return p;
+    return fibonacci(n-1)+fibonacci(n-2);
 }
