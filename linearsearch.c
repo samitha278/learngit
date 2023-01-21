@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define max 1000
 
-int arr[max];
+char arr[max];
 
 int search(int n);
 
@@ -10,24 +10,21 @@ int main(){
     printf("target: ");
     scanf("%d", &x);
     
-    for (int j=0;j<100;j++){
+    for (int j=0;j<50;j++){
         arr[j]=j*2;
     }
-    
     int y = search(x);
-    if(y==0){
-        printf("found");
-    }else{
-        printf("not found");
-    }
     return 0;
 }
 
 int search(int n){
-    for (int i=0;i<100;i++){
-        if (arr[i]==n)
+    for (int i=0;i<50;i++){
+        if (arr[i]==n){
+            printf("found");
             return 0;
+        }
     }
+    printf("not found");
     return 1;
 }
 
