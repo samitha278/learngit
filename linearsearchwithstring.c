@@ -4,8 +4,6 @@
 
 char arr[][max] = {"jason","react","node","flask","ajx"};
 
-char search(char n[max]);
-
 int main(void){
     char x[max];
     printf("target: ");
