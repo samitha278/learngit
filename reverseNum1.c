@@ -8,17 +8,15 @@ int main(){
     printf("How many numbers in your number: ");
     scanf("%i" ,&u);
     
-    char* x;
-    x = malloc(u);
+    char x[u];
     printf("Enter number: ");
     scanf("%s", x);
     
     int n = u/2;
     for(int i=0;i<n;i++){
-        swap((x+i),(x+u-1-i));
+        swap(&x[i],&x[u-1-i]);
     }
     printf("Reverse number: %s",x);
-    free(x);
     return 0;
 }
 
