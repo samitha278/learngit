@@ -1,7 +1,8 @@
 #include <stdio.h> 
 #include <stdlib.h>
 
-int main(){
+int main()
+{
     //create node structure
     typedef struct node{
         int number;
@@ -32,5 +33,6 @@ int main(){
         printf("%d", counter->number);
         counter = counter->next;
     }
+    free(n);
     return 0;
 }
