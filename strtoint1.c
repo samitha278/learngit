@@ -1,4 +1,4 @@
-// Online C compiler to run C program online
+
 #include <stdio.h>
 
 int giveInt(char a[]);
@@ -13,19 +13,19 @@ int main(){
     scanf("%s", str);
     
     int d = giveInt(str);
-    printf("%d",d);
+    printf("%d\n",d);
     return 0;
 }
 
 int giveInt(char a[]){
-    printf("%d\n", sizeof(a));
+    
     int i=0;
     int number=0;
     while(a[i] != '\0'){
         if(48<=(int)a[i] && (int)a[i]<=57){
-            int y=;
+            int y=sizeof(a)-1;
             number+=((int)a[i]-48) * powerV(10,y);
-            y++
+            y++;
         }
         i++;
     }
