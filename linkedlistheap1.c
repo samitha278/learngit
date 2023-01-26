@@ -12,20 +12,20 @@ int main(){
     node* n=malloc(sizeof(node));
     if(n==NULL)
         return 1;
-    *n.number = 1;
+    (*n).number = 1;
     list=n; //link list
      
-    node* n= malloc(sizeof(node));
+    n= malloc(sizeof(node));
     if(n==NULL)
         return 1;
-    *n.number=2;
-    *list.next=n;  //lint 1
+    (*n).number=2;
+    (*list).next=n;  //lint 1
     
-    node* n= malloc(sizeof(node));
+    n= malloc(sizeof(node));
     if(n==NULL)
         return 1;
-    *n.number=3;
-    *(*list.next).next=n; //link 2
+    (*n).number=3;
+    (*((*list).next)).next=n; //link 2
     
     node* counter=list;
     while(counter!=NULL){
