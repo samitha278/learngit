@@ -1,26 +1,25 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(){
-    int n;
-    printf("how long your number: ");
-    scanf("%d", &n);
-    char num[n];
-    printf("Number: ");
-    scanf("%s", num);
+int main()
+{
+    int number;
+    printf("Enter Number: ");
+    scanf("%d", &number);
     
-    int total=0;
-    for(int i=0,m,o;i<n;i++){
-        m=((int)num[i])-48;
-        o=m*m*m;
-        total+=o;
+    int counter=0;
+    int copy_num=number;
+    while(copy_num!=0)
+    {
+        int x = copy_num%10;
+        int m = x*x*x;
+        counter+=m;
+        
+        int y = (copy_num-x)/10;
+        copy_num=y;
     }
-    printf("%d\n",total);
-    
-    if(total==atoi(num))
-        printf("%d is armstrong number",total);
+    if(counter==number)
+        printf("%d is Armstrong number", number);
     else
-        printf("%s is not armstrong number",num);
-    
+        printf("%d is Armstrong not number", number);
     return 0;
 }
