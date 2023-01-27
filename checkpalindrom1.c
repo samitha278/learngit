@@ -1,30 +1,61 @@
 #include <stdio.h>
-#include <string.h>
 
-int swap(char *a, char *b);
+int reverse_num(int a);
+
+int int_length(int b);
+
+int int_power(int c,int d);
 
 int main()
 {
-    char number[20];
-    printf("Enter Number: ");
-    scanf("%s", number);
-    char num_copy[20];
-    strcpy(num_copy,number);
-    for(int i=0,n=strlen(number); i<n/2;i++)
-    {
-        swap(&number[i],&number[n-1-i]);
-    }
+    int number;
+    scanf("%d", &number);
     
-    if(strcmp(num_copy,number)==0)
-        printf("%s is palindrom number", num_copy);
+    int reverse_1 = reverse_num(number);
+    
+    if(reverse_1==number)
+        printf("%d is palindrome number", number);
     else
-        printf("%s is not palindrom number", num_copy);
+        printf("%d is not palindrome number", number);
+    
     return 0;
 }
 
-int swap(char *a, char *b)
+int reverse_num(int a)
+{  
+    int reverseNum=0;
+    int j = int_length(a);
+    while(a!=0)
+    {
+        int x = a%10;
+        int y = (a-x)/10;
+        a=y;
+        int z = int_power(10,j-1);
+        reverseNum+=(x*z);
+        j--;
+    }
+    return reverseNum;
+}
+
+int int_length(int b)
 {
-    char tmp = *a;
-    *a = *b;
-    *b = tmp;
+    int counter=0;
+    while(b!=0)
+    {
+        int k = b%10;
+        int l = (b-k)/10;
+        b=l;
+        counter++;
+    }
+    return counter;
+}
+
+int int_power(int c,int d)
+{
+    int w=1;
+    for(int i=0;i<d;i++)
+    {
+        w*=c;
+    }
+    return w;
 }
