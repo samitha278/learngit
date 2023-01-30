@@ -16,13 +16,11 @@ int romanToInt(char* s){
     int sum=0;
     int i=0;
     while(s[i]!='\0'){
-        int j=0;
-        while(j!=8){
+        for(int j=0;j!=8;++j){
             if(s[i]==roman[j]){
                 sum+=integer[j];
                 j=7;
             }
-            ++j;
         }
         if(0<i){
             if(((s[i]=='V') || (s[i]=='X')) && (s[i-1]=='I'))
