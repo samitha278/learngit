@@ -4,11 +4,18 @@ int merge(int left[],int right[],int size,int a[]){
     int n=size/2;
     int x=size-n;
     int l=0; int r=0; int i=0;
-    while(l<n && r<x && i<size){
-        if(left[l]<right[r]){
+    while(i<size){
+        if(r==x && l==n-1){
             a[i]=left[l];
             l++;
-        }else if(left[l]>right[r]){
+        }else if(r==x-1 && l==n){
+            a[i]=right[r];
+            r++;
+        }
+        if(left[l]<right[r] && l<n){
+            a[i]=left[l];
+            l++;
+        }else if(left[l]>right[r] && r<x){
             a[i]=right[r];
             r++;
         }
