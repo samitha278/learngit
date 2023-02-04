@@ -23,13 +23,11 @@ int enqueue(int x){
     
     if(head==NULL){
         head=newNode;
+        tail=newNode;
         return 0;
     }
-    node *tail=head;
-    while(tail->next!=NULL){
-        tail=tail->next;
-    }
     tail->next=newNode;
+    tail=tail->next;
     return 0;
 }
 
